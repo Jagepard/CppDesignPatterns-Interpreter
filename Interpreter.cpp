@@ -76,11 +76,6 @@ std::vector<std::string> Interpreter::explode(std::string const& parsedString, c
 bool Interpreter::isNumeric(std::string str) {
     for (int i = 0; i < str.length(); i++)
     {
-        if (isdigit(str[i]) == false)
-        {
-            return false;
-        }
-
-        return true;
+        return isdigit(str[i]);
     }
 }
