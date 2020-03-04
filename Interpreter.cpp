@@ -25,9 +25,9 @@ int main()
 
 void Interpreter::interpret(std::string input)
 {
-    auto exploded = explode(input, ' ');
+    std::vector<std::string> exploded = explode(input, ' ');
 
-    for (const auto& str : exploded)
+    for (const std::string& str : exploded)
     {
         if (isNumeric(str))
         {
@@ -46,7 +46,7 @@ void Interpreter::addAlbumToRegistry(Album album)
 
 void Interpreter::getDataFromRegistry(std::vector<std::string> exploded, std::list<Album>::iterator it)
 {
-    for (const auto& str : exploded)
+    for (const std::string& str : exploded)
     {
         if (str == "album") {
             std::cout << it->getName() << " ";
